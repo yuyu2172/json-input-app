@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     inp = dacite.from_dict(
         TrainInput,
-        json.loads(open(args.input).read()),
+        json.load(open(args.input)),
         dacite.Config(type_hooks={pathlib.Path: pathlib.Path}),
     )
     main(inp)
